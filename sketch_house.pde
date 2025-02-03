@@ -1,12 +1,58 @@
+//global vari naimaiotbn
+float suny;
+boolean day; 
+
+color sky = #B1CEED;
+color sun = #FFC60A;
+color moon = #FFFEF2;
+
+
 void setup(){
 size (1000, 500); //w, h
-background(#B1CEED);
-}
+background(sky);
+suny = 100;
+day = true;
 
+}
 void draw(){
-strokeWeight(0);
+background(sky);
+
+  if (day==true){
+    background(sky);
+  stroke(sun);
+fill(sun); //sun
+circle(100, suny, 100);
+
+suny = suny + 1;
+  if (suny > height) {
+    suny = -150;
+    day=!day;
+
+    }
+  } 
+  
+  if(day==false){
+    background(0);
+    fill(moon);
+    stroke(moon);
+   circle(100, suny, 100);
+   
+   stroke(0);
+   fill(0);
+      circle(150, suny, 100);
+
+   
+   suny = suny + 1;
+  if (suny > height) {
+    suny = -150;
+    day=!day;
+   }
+  }
+  
+  strokeWeight(0);
    fill(#70B26C);
   rect(0, 400, width, 400); //grass
+ 
  
  //house
  stroke(#814300);
@@ -37,6 +83,5 @@ fill(#5BB791);
 triangle(700, 350, 765, 200, 830, 350);//laeves
 triangle(720, 250, 765, 100, 810, 250);
 
-fill(#FFC60A);
-circle(100, 100, 100);
+
 }
